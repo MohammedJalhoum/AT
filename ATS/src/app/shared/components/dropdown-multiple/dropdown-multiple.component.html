@@ -1,0 +1,15 @@
+<div class="drop-container">
+  <form [formGroup]="form">
+    <ng-multiselect-dropdown formControlName="country"
+  [placeholder]="'Country'"
+  [settings]="dropdownSettings"
+  [data]="items"
+  (onSelect)="onItemSelect($event)"
+  >
+  </ng-multiselect-dropdown>
+  </form>
+  <div class="action">
+    <button (click)="handleButtonClick()">Send</button>
+  </div>
+  
+</div>

@@ -1,5 +1,14 @@
-<app-dropdown [label]="'Please Choose major'" [items]="items" (itemChange)="onItemChange($event, 'selection1')"></app-dropdown>
-<div *ngIf="selectedItem">
-    Your selection is {{selectedItem.name}} 
-</div>
-<app-dropdown [label]="'Please Choose skill'" [items]="items2" (itemChange)="onItemChange($event, 'selection2')"></app-dropdown>
+<div class="wrapper">
+
+
+  
+<app-header></app-header>
+  
+<app-sidebar></app-sidebar>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <router-outlet></router-outlet>
+    </div>
+<app-footer></app-footer>
+  </div>
+  <!-- ./wrapper -->
