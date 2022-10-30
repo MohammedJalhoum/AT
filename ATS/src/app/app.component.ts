@@ -1,4 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { DropDown } from './shared/models/dropdown.model';
 import { DropDownService } from './shared/services/drop-down.service';
 
 @Component({
@@ -8,7 +10,17 @@ import { DropDownService } from './shared/services/drop-down.service';
 })
 export class AppComponent implements OnInit , OnDestroy{
   title = 'ATS';
-  subscriptions : Subscriptions[] = [];
+  subscriptions : Subscription[] = [];
+  subscriptionsForDropdown:Subscription;
+  items:any[]= [
+    {id:1, name:"Computer Network"},
+    {id:2, name:"Marketing"}
+  ];
+  items2:any[]= [
+    {id:1, name:"Computer Network"},
+    {id:2, name:"Marketing"}
+  ];
+  selectedItem:any = null;
   constructor(private dropdownService:DropDownService){}
   ngOnDestroy(): void {
     this.subscriptions.forEach(sub => {
@@ -25,4 +37,13 @@ export class AppComponent implements OnInit , OnDestroy{
       }
     );
     this.subscriptions.push(sub);  }
+
+    onItemChange(item: DropDown, type:string): void{
+      if(type === "selection1"){
+        this.selectedItem = item;
+      }
+      else{
+        console.log(item);
+      }
+    }
 }
