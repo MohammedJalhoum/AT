@@ -7,13 +7,20 @@ import { DropdownMultipleComponent } from './components/dropdown-multiple/dropdo
 import { ContentComponent } from './components/content/content.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddressComponent } from './components/address/address.component';
+import { ContactComponent } from './components/contact/contact.component';
 
+let components =[
+  DropdownComponent,
+  DropdownMultipleComponent,
+  ContentComponent,
+  AddressComponent,
+  ContactComponent
 
+]
 @NgModule({
   declarations: [
-    DropdownComponent,
-    DropdownMultipleComponent,
-    ContentComponent
+    ...components
   ],
   imports: [
     CommonModule,
@@ -22,8 +29,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  exports: [DropdownComponent,
-    DropdownMultipleComponent,
-    ContentComponent]
+  exports: [
+    ...components
+
+  ]
 })
 export class SharedModule { }

@@ -16,13 +16,13 @@ const routes: Routes = [
 
   { path: 'companies', loadChildren: () => import('./companies/companies.module').then(m => m.CompaniesModule) },
   { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) },
-  { path: 'folders', loadChildren: () => import('./folders/folders.module').then(m => m.FoldersModule) },
-  { path: 'interviews', loadChildren: () => import('./interviews/interviews.module').then(m => m.InterviewsModule) },
-  { path: 'jobs', loadChildren: () => import('./jobs/jobs.module').then(m => m.JobsModule) },
-  { path: 'jobseekers', loadChildren: () => import('./jobseekers/jobseekers.module').then(m => m.JobseekersModule) },
+  { path: 'folders', loadChildren: () => import('./folder/folders.module').then(m => m.FoldersModule) },
+  { path: 'interviews', loadChildren: () => import('./interview/interviews.module').then(m => m.InterviewsModule) },
+  { path: 'jobs', loadChildren: () => import('./job/jobs.module').then(m => m.JobsModule) },
+  { path: 'jobseekers', loadChildren: () => import('./jobseeker/jobseekers.module').then(m => m.JobseekersModule) },
   { path: 'search', loadChildren: () => import('./search/search.module').then(m => m.SearchModule) },
-  { path: 'settings', loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule) },
-  { path: 'users', loadChildren: () => import('./users/users.module').then(m => m.UsersModule) },
+  { path: 'settings', loadChildren: () => import('./setting/settings.module').then(m => m.SettingsModule) },
+  { path: 'users', loadChildren: () => import('./user/users.module').then(m => m.UsersModule) },
 
 
 ];
